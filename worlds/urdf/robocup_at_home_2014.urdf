@@ -1,0 +1,96 @@
+<robot
+  name="robocup_at_home_2014">
+  <link
+    name="floor">
+    <inertial>
+      <origin
+        xyz="0.115 -0.825 -0.0005"
+        rpy="0 0 0" />
+      <mass
+        value="12000" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/floor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/floor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="walls">
+    <inertial>
+      <origin
+        xyz="-0.077481 -0.71769 0.5"
+        rpy="0 0 0" />
+      <mass
+        value="18362" />
+      <inertia
+        ixx="1338.4"
+        ixy="-4796"
+        ixz="-2.0132E-12"
+        iyy="21543"
+        iyz="-4.2093E-13"
+        izz="22882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/walls.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/walls.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_walls"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="floor" />
+    <child
+      link="walls" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

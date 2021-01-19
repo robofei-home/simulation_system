@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="world_name" default="empty" />
+  <arg name="enable_gui" default="true" />
+  <arg name="paused" default="false" />
+
+  <arg name="world_path" default="$(find social_worlds)/worlds/$(arg world_name).world"/>
+  <arg unless="$(arg paused)" name="command_arg1" value=""/>
+  <arg     if="$(arg paused)" name="command_arg1" value="-u"/>
+
+  <!-- ################################################## -->
+
+  <param name="/use_sim_time" value="true"/>
+  <param name="gazebo/enable_ros_network" value="true" />
+
+  <env name="GAZEBO_MODEL_PATH" value="$GAZEBO_MODEL_PATH:$(find social_worlds)/models/:$(find social_worlds)/models/3dparty/"/>
+  <node name="gazebo" pkg="gazebo_ros" type="gzserver" output="screen"
+	required="true" args="$(arg command_arg1) $(arg world_path) --verbose" >
+  </node>
+
+  <group if="$(arg enable_gui)" >
+    <node name="gzclient" pkg="gazebo_ros" type="gzclient" output="screen"/>
+  </group>
+
+</launch>

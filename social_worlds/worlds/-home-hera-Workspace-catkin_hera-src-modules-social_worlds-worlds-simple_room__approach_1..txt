@@ -1,0 +1,1 @@
+/home/hera/Workspace/catkin_hera/src/modules/social_worlds/worlds/simple_room__approach_1.world

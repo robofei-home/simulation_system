@@ -1,0 +1,64 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='default'>
+
+    <!-- Camera Pose -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-11 -0 11 0 0.7853 0</pose>
+      </camera>
+    </gui>
+
+    <!-- physics -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <!-- sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- @HOME 2019 -->
+    <include>
+      <name>robocup_2019</name>
+      <uri>model://robocup_2019</uri>
+      <pose>0 0 0.1 0 0 0</pose>
+    </include>
+
+    <!-- furniture-->
+    <include>
+      <name>furniture_2</name>
+      <uri>model://furniture_2</uri>
+      <pose>1.705010 -0.031034 0.459567 0 0 0</pose>
+    </include>
+
+    <!-- computer -->
+    <include>
+      <name>computer</name>
+      <uri>model://computer</uri>
+      <pose>0.358859 -2.942279 0.433153 0 0 0</pose>
+    </include>
+
+    <!-- food -->
+    <include>
+      <name>foods</name>
+      <uri>model://foods</uri>
+      <pose>3.215820 4.214740 1.284890 0 0 0</pose>
+    </include>
+
+    <!-- books -->
+    <include>
+      <name>books</name>
+      <uri>model://books</uri>
+      <pose>-1.691080 -5.046710 0.834354 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

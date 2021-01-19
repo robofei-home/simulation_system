@@ -1,0 +1,785 @@
+<robot
+  name="robocup_at_home_2014_forniture">
+  <link
+    name="floor">
+    <inertial>
+      <origin
+        xyz="0.162043521989853 -0.824999999999998 -0.0005"
+        rpy="0 0 0" />
+      <mass
+        value="12000" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/floor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/floor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="walls">
+    <inertial>
+      <origin
+        xyz="4.93251874021475 5.98231263855175 0.75"
+        rpy="0 0 0" />
+      <mass
+        value="18362.2494257509" />
+      <inertia
+        ixx="1338.4230925041"
+        ixy="-4795.96538021434"
+        ixz="7.40347261069131E-13"
+        iyy="21543.3237199441"
+        iyz="1.36168446424772E-13"
+        izz="22881.7468124482" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/walls.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/walls.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_walls"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="-6.12303176911189E-17 -6.64008986019832E-17 0" />
+    <parent
+      link="floor" />
+    <child
+      link="walls" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="table_kitchen">
+    <inertial>
+      <origin
+        xyz="-0.0148251556201719 -0.0640686794613408 -0.013499228338457"
+        rpy="0 0 0" />
+      <mass
+        value="229.694621201452" />
+      <inertia
+        ixx="77.7870787047035"
+        ixy="-0.00370438522750177"
+        ixz="0.115529182972807"
+        iyy="94.8341515366611"
+        iyz="-0.0114715507568256"
+        izz="17.7048609391701" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/table_kitchen.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.729411764705882 0.356862745098039 0.0235294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/table_kitchen.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_table_kitchen"
+    type="fixed">
+    <origin
+      xyz="-0.949751438553686 -5.28564359643745 0.621914781542176"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="floor" />
+    <child
+      link="table_kitchen" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="kitchen">
+    <inertial>
+      <origin
+        xyz="-0.70574137773059 0.512853823238402 -0.398295405787052"
+        rpy="0 0 0" />
+      <mass
+        value="508.116360033963" />
+      <inertia
+        ixx="18.3473653241423"
+        ixy="15.0495179789158"
+        ixz="3.19407612551288"
+        iyy="193.036843322496"
+        iyz="-2.15581101360925"
+        izz="204.742938750507" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/kitchen.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/kitchen.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_kitchen"
+    type="fixed">
+    <origin
+      xyz="-2.35702717025576 -1.53342788574626 0.00146961956425273"
+      rpy="1.5707963267949 6.12303176911189E-17 1.5707963267949" />
+    <parent
+      link="floor" />
+    <child
+      link="kitchen" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="stove">
+    <inertial>
+      <origin
+        xyz="-0.125807232327899 -0.529341793231879 0.346909995659437"
+        rpy="0 0 0" />
+      <mass
+        value="338.969953194765" />
+      <inertia
+        ixx="9.51826418454612"
+        ixy="3.35338405492847"
+        ixz="-0.0335039360347909"
+        iyy="35.090364871207"
+        iyz="-0.843421108291206"
+        izz="41.2968594011225" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/stove.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/stove.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_stove"
+    type="fixed">
+    <origin
+      xyz="-0.859599999999999 -2.41046162410305 0.00284738954239289"
+      rpy="-1.5707963267949 -6.12303176911189E-17 -1.5707963267949" />
+    <parent
+      link="floor" />
+    <child
+      link="stove" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bed">
+    <inertial>
+      <origin
+        xyz="-0.0389807110971674 1.24999110394613 0.217593235166563"
+        rpy="0 0 0" />
+      <mass
+        value="1284.07012058501" />
+      <inertia
+        ixx="2.91492619765083"
+        ixy="-0.0392165113524979"
+        ixz="-0.67303084509106"
+        iyy="1.94339388624748"
+        iyz="0.00447094061786035"
+        izz="4.21663857517505" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/bed.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/bed.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_bed"
+    type="fixed">
+    <origin
+      xyz="1.86277830721022 -5.45 0.4"
+      rpy="3.14159265358979 6.12303176911189E-17 1.5707963267949" />
+    <parent
+      link="floor" />
+    <child
+      link="bed" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="table_bedroom">
+    <inertial>
+      <origin
+        xyz="0.903070609212545 -0.347047940236761 0.0176116422857098"
+        rpy="0 0 0" />
+      <mass
+        value="248.09387619041" />
+      <inertia
+        ixx="12.7756845132593"
+        ixy="0.243026010790977"
+        ixz="0.225587694636603"
+        iyy="1.23517647716545"
+        iyz="-2.66091129310497"
+        izz="12.7078603768214" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/table_bedroom.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/table_bedroom.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_table_bedroom"
+    type="fixed">
+    <origin
+      xyz="0.981628405693308 -6.39765151700287 0.660785811957398"
+      rpy="3.14159265358979 6.12303176911189E-17 1.5707963267949" />
+    <parent
+      link="floor" />
+    <child
+      link="table_bedroom" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="dining_table">
+    <inertial>
+      <origin
+        xyz="0.594903997665842 0.0701325845541099 0.792631874101851"
+        rpy="0 0 0" />
+      <mass
+        value="538.277321874631" />
+      <inertia
+        ixx="98.8235057164328"
+        ixy="-3.18402560449321"
+        ixz="1.61007607284375"
+        iyy="195.756335265195"
+        iyz="-1.93404161385332"
+        izz="99.6542503652822" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/dining_table.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/dining_table.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_dining_table"
+    type="fixed">
+    <origin
+      xyz="2.53152844888534 -2.51892564417824 0.54438823651535"
+      rpy="1.5707963267949 6.12303176911189E-17 1.5707963267949" />
+    <parent
+      link="floor" />
+    <child
+      link="dining_table" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="tv">
+    <inertial>
+      <origin
+        xyz="-0.00381588735598393 -0.0269165205802447 -0.0465716969580523"
+        rpy="0 0 0" />
+      <mass
+        value="27.1398882321728" />
+      <inertia
+        ixx="0.0967935620752383"
+        ixy="0.000321473340801921"
+        ixz="-0.00153780250420138"
+        iyy="0.0121695079590008"
+        iyz="-0.010411918508525"
+        izz="0.0853653848648628" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/tv.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/tv.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_tv"
+    type="fixed">
+    <origin
+      xyz="3.06538322358296 0.324367105082983 0.313394155058284"
+      rpy="1.5707963267949 1.28426249057384E-18 3.120616824622" />
+    <parent
+      link="floor" />
+    <child
+      link="tv" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="flowers_stand">
+    <inertial>
+      <origin
+        xyz="-3.72935779480166E-08 0.413988521834406 -1.66456857186859E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1.08720395820173" />
+      <inertia
+        ixx="0.000172167308974806"
+        ixy="7.35774197925269E-12"
+        ixz="-8.84751735757845E-18"
+        iyy="2.37713111854124E-17"
+        iyz="3.28406676492136E-12"
+        izz="0.000172167308974821" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/flowers_stand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.517647058823529 0.368627450980392 0.266666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/flowers_stand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_flowers_stand"
+    type="fixed">
+    <origin
+      xyz="1.65213157434124 0.449378932244354 0.0783325125146509"
+      rpy="1.5707963267949 0.0087266462599717 -5.34348887276556E-19" />
+    <parent
+      link="floor" />
+    <child
+      link="flowers_stand" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="flowers_stand2">
+    <inertial>
+      <origin
+        xyz="-3.35088985448095E-08 0.41398852091325 -1.32151480869425E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1.0872039574042" />
+      <inertia
+        ixx="0.000172167308611359"
+        ixy="6.61105304960893E-12"
+        ixz="-6.31128654369744E-18"
+        iyy="1.84921982069329E-17"
+        iyz="2.60724896112829E-12"
+        izz="0.000172167308611372" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/flowers_stand2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.517647058823529 0.368627450980392 0.266666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/flowers_stand2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_flowers_stand2"
+    type="fixed">
+    <origin
+      xyz="-0.478721761606623 2.67322706483048 0.0273825524881129"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="floor" />
+    <child
+      link="flowers_stand2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="shelf">
+    <inertial>
+      <origin
+        xyz="-0.252066115702482 -0.112197099250249 0.191620265864059"
+        rpy="0 0 0" />
+      <mass
+        value="160.755839999999" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/shelf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.729411764705882 0.486274509803922 0.23921568627451 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/shelf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_shelf"
+    type="fixed">
+    <origin
+      xyz="-2.87806106566165 1.01814591053519 1.16297587690176"
+      rpy="1.5707963267949 6.12303176911189E-17 1.5707963267949" />
+    <parent
+      link="floor" />
+    <child
+      link="shelf" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="sofa">
+    <inertial>
+      <origin
+        xyz="-5.82880222288473E-06 0.261689541593786 -0.0312733634101008"
+        rpy="0 0 0" />
+      <mass
+        value="734.520017683206" />
+      <inertia
+        ixx="15.2288481987157"
+        ixy="-0.491544473433582"
+        ixz="-1.30252621134327"
+        iyy="243.42799489864"
+        iyz="2.27734558072027"
+        izz="242.82771878816" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/sofa.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/sofa.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_sofa"
+    type="fixed">
+    <origin
+      xyz="3.07000641347078 2.59400643553453 0.258421366661373"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="floor" />
+    <child
+      link="sofa" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="little_sofa">
+    <inertial>
+      <origin
+        xyz="3.07796437226671E-08 -0.315927328673902 0.446093707872459"
+        rpy="0 0 0" />
+      <mass
+        value="432.563537490399" />
+      <inertia
+        ixx="6.3699100843543"
+        ixy="8.38152565810768E-07"
+        ixz="-5.8993317674536E-07"
+        iyy="2.11025168714083"
+        iyz="2.99815798772563"
+        izz="4.25965839721379" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/little_sofa.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/little_sofa.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_little_sofa"
+    type="fixed">
+    <origin
+      xyz="4.09550418386854 1.48565692645006 0.248482905796148"
+      rpy="-1.5707963267949 -6.12303176911189E-17 -1.5707963267949" />
+    <parent
+      link="floor" />
+    <child
+      link="little_sofa" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="little_sofa_e">
+    <inertial>
+      <origin
+        xyz="3.07796526044513E-08 0.305927328673902 -0.446093707872459"
+        rpy="0 0 0" />
+      <mass
+        value="432.563537490399" />
+      <inertia
+        ixx="6.36991008435428"
+        ixy="-8.38152738266387E-07"
+        ixz="5.89933298128145E-07"
+        iyy="2.11025168714084"
+        iyz="2.99815798772562"
+        izz="4.25965839721377" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/little_sofa_e.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://worlds/meshes/little_sofa_e.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floor_to_little_sofa_e"
+    type="fixed">
+    <origin
+      xyz="2.03195556920311 1.50547243191082 0.250575154845565"
+      rpy="1.5707963267949 6.12303176911189E-17 1.5707963267949" />
+    <parent
+      link="floor" />
+    <child
+      link="little_sofa_e" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

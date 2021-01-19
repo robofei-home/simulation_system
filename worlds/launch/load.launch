@@ -1,0 +1,35 @@
+<launch>
+  <arg name="model" />
+  <arg name="enable_gui" default="true"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+    <arg name="gui" default="$(arg enable_gui)"/>
+  </include>
+
+  <group ns="world">
+
+    <param name="robot_description"
+      command="$(find xacro)/xacro
+      $(find worlds)/urdf/$(arg model).urdf" />
+
+    <node name="tf_map_floor" pkg="tf" type="static_transform_publisher"
+      args="0 0 0 0 0 0 map floor 40" />
+
+    <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model"
+          args="-param robot_description
+                -urdf
+                -model $(arg model)" />
+
+    <node
+      name="joint_state_publisher"
+      pkg="joint_state_publisher"
+      type="joint_state_publisher" />
+
+    <node
+      name="robot_state_publisher"
+      pkg="robot_state_publisher"
+      type="state_publisher" />
+
+  </group>
+
+</launch>
