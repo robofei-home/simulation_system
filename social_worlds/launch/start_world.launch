@@ -4,7 +4,16 @@
   <arg name="enable_gui" default="true" />
   <arg name="paused" default="false" />
 
-  <arg name="world_path" default="$(find social_worlds)/worlds/$(arg world_name).world"/>
+  <arg name="robot_name" default="$(optenv ROBOT_NAME hera)" />
+  <arg name="camera_controller" default="false" />
+
+  <!-- Coisas para randomizar o mapa -->
+  <arg name="seed" default="1" />
+  <arg name="per_category" default="6" />
+  <arg name="obstacles" default="4" />
+  <arg name="per_row" default="6" />
+
+  <arg name="world_path" default="$(find tmc_wrs_gazebo_worlds)/worlds/$(arg world_name).world"/>
   <arg unless="$(arg paused)" name="command_arg1" value=""/>
   <arg     if="$(arg paused)" name="command_arg1" value="-u"/>
 
@@ -21,5 +30,14 @@
   <group if="$(arg enable_gui)" >
     <node name="gzclient" pkg="gazebo_ros" type="gzclient" output="screen"/>
   </group>
+
+  <!-- spawn objects to the world -->
+  <node pkg="tmc_wrs_gazebo_worlds" type="spawn_objects" name="spawn_objects" args="--seed $(arg seed) --percategory $(arg per_category) --obstacles $(arg obstacles) --perrow $(arg per_row)" output="screen" />
+  
+  <!-- task evaluators -->
+  <include file="$(find tmc_gazebo_task_evaluators)/launch/robocup2021.launch">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+    <arg name="camera_controller" value="$(arg camera_controller)"/>
+  </include>
 
 </launch>
