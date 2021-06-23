@@ -34,6 +34,7 @@
   <!-- spawn objects to the world -->
   <node pkg="tmc_wrs_gazebo_worlds" type="spawn_objects" name="spawn_objects" args="--seed $(arg seed) --percategory $(arg per_category) --obstacles $(arg obstacles) --perrow $(arg per_row)" output="screen" />
   
+  <!-- Inicialização do Score -->
   <node pkg="tmc_gazebo_task_evaluators" type="setup_score_widget" name="setup_score_widget"/>
 
   <!-- task evaluators -->
@@ -43,4 +44,5 @@
   </include>
 
 </launch>
+
 
